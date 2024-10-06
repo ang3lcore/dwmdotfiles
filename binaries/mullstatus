@@ -1,0 +1,10 @@
+#!/bin/bash
+
+mullvad_status=$(mullvad status 2>/dev/null)
+
+if [[ $mullvad_status == *"Connected to"* ]]; then
+  echo "connected"
+else
+  echo "disconnected"
+fi
+

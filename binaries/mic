@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Получаем состояние микрофона
+output=$(amixer -c 1 sget 'Capture')
+
+# Проверяем, включен ли микрофон
+if echo "$output" | grep -q '\[on\]'; then
+    echo "^c#06ff00^󰍬"
+else
+    echo "^c#FF0000^󰍭"
+fi
